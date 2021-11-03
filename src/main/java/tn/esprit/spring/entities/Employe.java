@@ -3,6 +3,7 @@ package tn.esprit.spring.entities;
 import java.io.Serializable;
 import java.util.List;
 
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -13,9 +14,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.Getter;
-import lombok.Setter;
+
 
 
 
@@ -26,36 +28,36 @@ public class Employe implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Getter @Setter private int id;
+	private int id;
 	
-	@Getter @Setter private String prenom;
+	private String prenom;
 	
-	@Getter @Setter private String nom;
+	private String nom;
 	
 	//@Column(unique=true)
-	@Getter @Setter private String email;
+	private String email;
 
-	@Getter @Setter private boolean isActif;
+	private boolean isActif;
 	
 	@Enumerated(EnumType.STRING)
 	//@NotNull
-	@Getter @Setter private Role role;
+	private Role role;
 	
 	//@JsonBackReference  
 	@JsonIgnore
 	@ManyToMany(mappedBy="employes",fetch=FetchType.EAGER )
 	//@NotNull
-	@Getter @Setter private List<Departement> departements;
+	private List<Departement> departements;
 	
 	@JsonIgnore
 	//@JsonBackReference
 	@OneToOne(mappedBy="employe")
-	@Getter @Setter private Contrat contrat;
+	private Contrat contrat;
 	
 	@JsonIgnore
 	//@JsonBackReference
 	@OneToMany(mappedBy="employe")
-	@Getter @Setter private List<Timesheet> timesheets;
+	private List<Timesheet> timesheets;
 	
 	
 	public Employe() {
@@ -69,6 +71,79 @@ public class Employe implements Serializable {
 		this.isActif = isActif;
 		this.role = role;
 	}
+	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getPrenom() {
+		return prenom;
+	}
+
+	public void setPrenom(String prenom) {
+		this.prenom = prenom;
+	}
+
+	public String getNom() {
+		return nom;
+	}
+
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public boolean isActif() {
+		return isActif;
+	}
+
+	public void setActif(boolean isActif) {
+		this.isActif = isActif;
+	}
+
+	public Role getRole() {
+		return role;
+	}
+
+	public void setRole(Role role) {
+		this.role = role;
+	}
+
+	public List<Departement> getDepartements() {
+		return departements;
+	}
+
+	public void setDepartements(List<Departement> departement) {
+		this.departements = departement;
+	}
+
+	public Contrat getContrat() {
+		return contrat;
+	}
+
+	public void setContrat(Contrat contrat) {
+		this.contrat = contrat;
+	}
+
+	public List<Timesheet> getTimesheets() {
+		return timesheets;
+	}
+
+	public void setTimesheets(List<Timesheet> timesheets) {
+		this.timesheets = timesheets;
+	}
+	
 	
 	
 }

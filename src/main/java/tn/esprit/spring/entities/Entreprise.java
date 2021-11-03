@@ -1,6 +1,7 @@
 package tn.esprit.spring.entities;
 
 import java.io.Serializable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -41,6 +42,11 @@ public class Entreprise implements Serializable{
 
 	public Entreprise(String name, String raisonSocial) {
 		this.name = name;
+		this.raisonSocial = raisonSocial;
+	}
+	public Entreprise(int id,String name, String raisonSocial) {
+		this.name = name;
+		this.id=id;
 		this.raisonSocial = raisonSocial;
 	}
 

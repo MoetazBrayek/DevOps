@@ -16,7 +16,6 @@ public class TimesheetPK implements Serializable {
 	
 	private int idEmploye;
 	
-	//Choisir le TemporalType selon le besoin metier
 	@Temporal(TemporalType.DATE)
 	private Date dateDebut;
 	
@@ -36,46 +35,16 @@ public class TimesheetPK implements Serializable {
 		this.dateFin = dateFin;
 	}
 
-	//Pour que hibernate peut comparer deux objets (par exemple : recherche de l'objet dans le persistenceContext), 
-	//Il doit pouvoir comparer les primary key des deux entites
-	//Vu que l'entite a une clé composé, on doit implementer la methode equal.
-	//Utiliser l'IDE pour générer le equal et le hashcode
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((dateDebut == null) ? 0 : dateDebut.hashCode());
-		result = prime * result + ((dateFin == null) ? 0 : dateFin.hashCode());
-		result = prime * result + idEmploye;
-		result = prime * result + idMission;
-		return result;
+	public TimesheetPK(int idMission, int idEmploye) {
+		super();
+		this.idMission = idMission;
+		this.idEmploye = idEmploye;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		TimesheetPK other = (TimesheetPK) obj;
-		if (dateDebut == null) {
-			if (other.dateDebut != null)
-				return false;
-		} else if (!dateDebut.equals(other.dateDebut)) {
-			return false;
-		}
-		if (dateFin == null) {
-			if (other.dateFin != null)
-				return false;
-		} else if (!dateFin.equals(other.dateFin)) {
-			return false;}
-		if (idEmploye != other.idEmploye)
-			return false;
-		return idMission == other.idMission;
-	}
+	
+	
 
+	
 	public void setIdMission(int idMission) {
 		this.idMission = idMission;
 	}

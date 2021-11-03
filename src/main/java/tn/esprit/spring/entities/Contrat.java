@@ -25,12 +25,10 @@ public class Contrat implements Serializable {
 	
 	private String typeContrat;
 	
-	
+	private float salaire;
 	
 	@OneToOne
 	private Employe employe;
-
-	private float salaire;
 
 	public Contrat() {
 		super();

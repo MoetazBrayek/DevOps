@@ -29,6 +29,13 @@ public class Mission implements Serializable {
 	@OneToMany(mappedBy="mission")
 	private  List<Timesheet> timesheets;
 	
+	public Mission(int id, String name, String description) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.description = description;
+	}
+
 	public Mission() {
 		super();
 	}
