@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.apache.log4j.Logger;
 import tn.esprit.spring.entities.Departement;
+
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.repository.EntrepriseRepository;
@@ -169,6 +170,10 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		
 		
 		
+	}
+
+	public List<Entreprise> getAllEntreprise() {
+		return (List<Entreprise>) entrepriseRepoistory.findAll();
 	}
 
 }
