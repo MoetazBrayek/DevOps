@@ -33,7 +33,7 @@ public class EmployeServiceImpl implements IEmployeService {
 	@Autowired
 	TimesheetRepository timesheetRepository;
 	
-	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);	
+	private static final Logger l = Logger.getLogger(EmployeServiceImpl.class);	
 
 	public int ajouterEmploye(Employe employe) {
 		l.info("lancer la methode ajouter employe");

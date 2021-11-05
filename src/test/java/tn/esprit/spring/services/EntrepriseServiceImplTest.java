@@ -1,13 +1,11 @@
 package tn.esprit.spring.services;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 
 import java.util.List;
 
-import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,7 +19,6 @@ import tn.esprit.spring.repository.EntrepriseRepository;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EntrepriseServiceImplTest {
-	private static final Logger l = Logger.getLogger(EntrepriseServiceImplTest.class);	
 	@Autowired
 	IEntrepriseService es;
 	@Autowired

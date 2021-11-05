@@ -34,7 +34,7 @@ public class TimesheetServiceImpl implements ITimesheetService {
 	EmployeRepository employeRepository;
 	
 	
-	private static final Logger l = Logger.getLogger(EntrepriseServiceImpl.class);
+	private static final Logger l = Logger.getLogger(TimesheetServiceImpl.class);
 	
 	public int ajouterMission(Mission mission) {
 		l.info("lancer la methode ajouterMission");
