@@ -13,7 +13,6 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 
-import tn.esprit.spring.config.LoginFilter;
 
 @SpringBootApplication
 @EnableAutoConfiguration
@@ -35,12 +34,6 @@ public class TimesheetApplication {
 	}
 
 
-	@Bean
-	public FilterRegistrationBean<LoginFilter> loginFilter() {
-		FilterRegistrationBean<LoginFilter> registration = new FilterRegistrationBean<>();
-		registration.addUrlPatterns("/pages/*");
-		registration.setFilter(new LoginFilter());
-		return registration;
-	}
+	
  
 }
