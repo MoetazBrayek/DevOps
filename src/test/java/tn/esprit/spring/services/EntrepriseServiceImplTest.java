@@ -1,10 +1,9 @@
 package tn.esprit.spring.services;
 
 import static org.junit.Assert.assertEquals;
-
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-
+import static org.junit.Assert.assertNotEquals;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -13,19 +12,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
-
+import tn.esprit.spring.entities.Departement;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.repository.EntrepriseRepository;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class EntrepriseServiceImplTest {
-		
 	@Autowired
 	IEntrepriseService es;
 	@Autowired
 	EntrepriseRepository er;
-
+	
+	
 	@Test
 	public void ajouterEntrepriseTest()  {
 	Entreprise ent=new Entreprise(1,"SSII Consulting","Cite El Ghazela");
@@ -42,7 +41,17 @@ public class EntrepriseServiceImplTest {
 		
 		}
 
+	
 
+	
+
+	@Test
+	public void ajouterDepartementTest()  {
+		Departement dep =new Departement(1,"info");
+	int a=es.ajouterDepartement(dep);
+	assertEquals(dep.getId(),a);
+	
+	}
 	
 	
 	@Test
@@ -51,14 +60,26 @@ public class EntrepriseServiceImplTest {
 	assertNull(ent);
 	}
 	
+
+	@Test
+	public void getNombreEntrepriseJPQLTest() {
+		assertNotEquals(3, es.getNombreEntrepriseJPQL());
+	}
+
 	
+
+	@Test
+	public void getEntrepriseNameByIdTest() {
+		assertNotEquals("bernar2", es.getEntrepriseNameById(1));
+	}
 	
-	
+
 	@Test
 	public void getAllDepartementsNamesByEntrepriseTest1()  {
 	List<String> names=es.getAllDepartementsNamesByEntreprise(7000);
 	assertNotNull(names);
 	}
+	
 	
 	
 	

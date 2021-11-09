@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.apache.log4j.Logger;
 import tn.esprit.spring.entities.Departement;
-
+import tn.esprit.spring.entities.Employe;
 import tn.esprit.spring.entities.Entreprise;
 import tn.esprit.spring.repository.DepartementRepository;
 import tn.esprit.spring.repository.EntrepriseRepository;
@@ -171,9 +171,32 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		
 		
 	}
+	public String getEntrepriseNameById(int entrepriseId) {
+		l.info("lancer la methode get entreprise nom by id");
+		l.debug("je vais récupéré le nom d'un entreprise à travers son id");
+	Optional<Entreprise>	value  = entrepriseRepoistory.findById(entrepriseId);
+	if(value.isPresent()) {
+		Entreprise entrepriseManagedEntity=value.get();
+		return entrepriseManagedEntity.getName();
+	}else {
+
+		l.debug("je viens de récupéré lenom d'une entreprise à travers son id");
+		l.info("fin de la methode get entreprise nom by id");
+		return null;
+	}
+	}
 
 	public List<Entreprise> getAllEntreprise() {
 		return (List<Entreprise>) entrepriseRepoistory.findAll();
+	}
+	public int getNombreEntrepriseJPQL() {
+		l.info("lancer la methode getNombreEntrepriseJPQL");
+		l.debug("je vais récupérer le nombre de tous les entreprises");
+		int a =  entrepriseRepoistory.countentp();
+		l.debug("je viens récupérer le nombre de tous les entreprises");
+		l.info("fin de  la methode  getNombreEntrepriseJPQL");
+		return a;
+		
 	}
 
 }
