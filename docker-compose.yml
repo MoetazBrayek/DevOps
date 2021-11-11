@@ -1,0 +1,33 @@
+version: "2.4"
+services:
+ mysqldb:
+  image: mysql:5.7
+  restart: unless-stopped
+  environment:
+   - MYSQL_ROOT_PASSWORD=rootpass
+   - MYSQL_DATABASE=spring      
+   - MYSQL_USER=aziz
+   - MYSQL_PASSWORD=aziz
+  ports:
+   - "3306:3306"
+
+  stdin_open: true
+  tty: true
+
+ Timesheet-contrat-A:
+  build: \
+  image: contrat
+  ports:
+    - 8082:8082
+  depends_on:
+   - mysqldb
+  environment:
+   SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url"  : "jdbc:mysql://mysqldb:3306/spring?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC",
+        "spring.datasource.username" : "aziz",
+        "spring.datasource.password" : "aziz",
+        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL5InnoDBDialect",
+        "spring.jpa.hibernate.ddl-auto" : "update"
+      }'
+volumes:
+  db:
