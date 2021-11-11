@@ -85,7 +85,7 @@ import tn.esprit.spring.repository.EntrepriseRepository;
 	
 	@Test
 	
-	public void deleteEntrepriseTest() throws ParseException {
+	 void deleteEntrepriseTest() throws ParseException {
 		
 	
 		int value = es.deleteById(1);
