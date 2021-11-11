@@ -115,18 +115,18 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 
 	@Transactional
 	public void deleteEntrepriseById(int entrepriseId) {
-		l.info("lancer  la methode delete entreprise by id");
-		l.debug("je vais lancer  la methode delete entreprise by id");
+		l.info("lancerr  la methode delete entreprise by id");
+		l.debug("jee vais lancer  la methode delete entreprise by id");
 		Optional<Entreprise> value = entrepriseRepoistory.findById(entrepriseId);
 		if (value.isPresent()) {
 			Entreprise ent=value.get();
 			entrepriseRepoistory.delete(ent);	
 			
 			l.debug("je viens de finir la delete entreprise by id");
-			l.info("finb de   la methode delete entreprise by id");	
+			l.info("fin de   la methodee delete entreprise by id");	
 		}
 		else {l.debug("l'entreprise n'existe passs");
-		l.info("finb de   la methode delete entreprise by id");	
+		l.info("find de   la methode delete entreprise by id");	
 			
 		}
 		
@@ -141,11 +141,11 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 			entrepriseRepoistory.delete(ent);	
 			
 			l.debug("je viens de finir la delete entreprise by id");
-			l.info("finb de   la methode delete entreprise by id");	
+			l.info("fina de   la methode delete entreprise by id");	
 			return 1;
 		}
 		else {l.debug("l'entreprise n'existe passs");
-		l.info("finb de   la methode delete entreprise by id");	
+		l.info("finba dee   la methode delete entreprise by id");	
 		return -1;
 			
 		}
