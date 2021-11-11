@@ -83,16 +83,6 @@ import tn.esprit.spring.repository.EntrepriseRepository;
 	}
 	
 	
-	@Test
-	
-	 void deleteEntrepriseTest() throws ParseException {
-		
-	
-		int value = es.deleteById(1);
-		
-		assertNotEquals(1, value);	
-		
-	}
 	
 	
 }
