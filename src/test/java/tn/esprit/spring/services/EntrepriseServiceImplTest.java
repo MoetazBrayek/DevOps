@@ -4,6 +4,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertNotEquals;
+
+import java.text.ParseException;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -81,7 +83,16 @@ import tn.esprit.spring.repository.EntrepriseRepository;
 	}
 	
 	
+	@Test
 	
+	public void deleteEntrepriseTest() throws ParseException {
+		
+	
+		int value = es.deleteById(1);
+		
+		assertNotEquals(1, value);	
+		
+	}
 	
 	
 }

@@ -131,6 +131,26 @@ public class EntrepriseServiceImpl implements IEntrepriseService {
 		}
 		
 	}
+	@Transactional
+	public int deleteById(int entrepriseId) {
+		l.info("lancer  la methode delete entreprise by id");
+		l.debug("je vais lancer  la methode delete entreprise by id");
+		Optional<Entreprise> value = entrepriseRepoistory.findById(entrepriseId);
+		if (value.isPresent()) {
+			Entreprise ent=value.get();
+			entrepriseRepoistory.delete(ent);	
+			
+			l.debug("je viens de finir la delete entreprise by id");
+			l.info("finb de   la methode delete entreprise by id");	
+			return 1;
+		}
+		else {l.debug("l'entreprise n'existe passs");
+		l.info("finb de   la methode delete entreprise by id");	
+		return -1;
+			
+		}
+		
+	}
 
 	@Transactional
 	public void deleteDepartementById(int depId) {
