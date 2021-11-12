@@ -66,13 +66,13 @@ pipeline {
         
         	stage('mysql') { 
                 steps { 
-                    bat "docker container run --name mysqldb --network devops-nt  -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=timesheet -d mysql:5.6"
+                    bat "docker container run --name mysqldb --network devops-nt  -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=timesheet-spring -d mysql:5.6"
 
                 }
            } 
            stage('run images') { 
                 steps { 
-                    bat "docker container run --network devops-nt --name timesheet-container -p 8083:8083 -d $registry:$BUILD_NUMBER"
+                    bat "docker container run --network devops-nt --name timesheet-container -p 8082:8082 -d $registry:$BUILD_NUMBER"
                 }
            } 
 	}
