@@ -1,4 +1,4 @@
-pipeline {
+vvvvvvvvvvpipeline {
 	agent any
 	stages{
 		stage('clone and clean repo'){
@@ -51,7 +51,7 @@ pipeline {
         stage('email'){
             	           steps {
 
-            mail bcc: '', body: 'tazzzzzzz', cc: '', from: '', replyTo: '', subject: 'hello update from aaa ', to: 'moetazbusiness@gmail.com'
+            mail bcc: '', body: "<h1> Hello From Moetaz</h1> \nInformation at: https://e69a-41-62-195-195.ngrok.io/job/moetaz/${env.BUILD_NUMBER} \n or localhost ${env.BUILD_URL} \n ", cc: '', from: '', replyTo: '', subject: "MoetazDevOps Project - Build # ${env.BUILD_NUMBER} - ${currentBuild.currentResult} ", to: 'moetazbusiness@gmail.com'
     }}
     
 }}
