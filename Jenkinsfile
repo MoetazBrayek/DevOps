@@ -51,7 +51,7 @@ pipeline {
         stage('email'){
             	           steps {
 
-            mail bcc: '', body: "<h1> Hello From Moetaz</h1> \nInformation at: https://e69a-41-62-195-195.ngrok.io/job/moetaz/${env.BUILD_NUMBER} \n or localhost ${env.BUILD_URL} \n  Creds : User : moetaz \n Pass : moetaz \n Regards", cc: '', from: '', replyTo: '', subject: "MoetazDevOps Project - Build # ${env.BUILD_NUMBER} - ${currentBuild.currentResult} ", to: 'moetaz.brayek@esprit.tn,thouraya.louati@esprit.tn'
+            mail bcc: '', body: "<h1> Hello From Moetaz</h1> \nInformation at: https://e69a-41-62-195-195.ngrok.io/job/Integ/${env.BUILD_NUMBER} \n or localhost ${env.BUILD_URL} \n  Creds : User : moetaz \n Pass : moetaz \n Regards", cc: '', from: '', replyTo: '', subject: "MoetazDevOps Project - Build # ${env.BUILD_NUMBER} - ${currentBuild.currentResult} ", to: 'moetaz.brayek@esprit.tn,thouraya.louati@esprit.tn'
     }}
     
 }}
