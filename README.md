@@ -1,6 +1,6 @@
 # DevOps Esprit Project
 --
-[![Image](https://github.com/yankils/Simple-DevOps-Project/blob/master/Devops_course.PNG "DevOps Project - CI/CD with Jenkins Ansible Docker Kubernetes ")]()
+[![Image](https://i.imgur.com/Cwp1MuZ.png "DevOps Project - CI/CD with Jenkins Docker nexus ")]()
 
 <h2>Running CI Server (Jenkins), Nexus, Sonarqube</h2>
 <strong>Who all looking to get started with Continuous Integration and Continuous Delivery </strong> 
