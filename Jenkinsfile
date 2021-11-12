@@ -1,4 +1,4 @@
-vvvvvvvvvvpipeline {
+pipeline {
 	agent any
 	stages{
 		stage('clone and clean repo'){
