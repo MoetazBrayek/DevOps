@@ -1,6 +1,4 @@
 import os
-import sys
-import socket
 import sys,time
 
 def sprint(str):
@@ -11,7 +9,7 @@ def sprint(str):
 
 
 def init():
-    sprint("Checking if All Service  ....")
+    sprint("Checking if All Service  \n.... DevOps is the union of people, processes, and products \n to enable continuous delivery of value to our end users.\n It s people processes products to deliver value")
 
 def is_port_in_use(port):
     import socket
@@ -33,4 +31,8 @@ init()
 is_port_in_use(8080)
 is_port_in_use(9000)
 is_port_in_use(8081)
-#smee --url https://smee.io/Fa1RfLxs47CnueD0 --path /github-webhook/ --port 8080
+ch = input("do you want to start webhook  yes/no?")
+if str(ch) == "yes":
+    os.system("smee --url https://smee.io/Fa1RfLxs47CnueD0 --path /github-webhook/ --port 8080")
+else:
+    print("thank you lazy boy")
