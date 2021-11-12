@@ -78,5 +78,29 @@ Reason : Despite all the benfit of jenkins and other tools ... <strong>  it's my
 <p>Follow this : https://www.alphr.com/how-to-check-which-ports-open-windows-10-pc/</p>
 
 
+<img src="https://miro.medium.com/max/875/1*dBy8ia2ZuKT36VUAHI8hQQ.png" data-canonical-src="https://miro.medium.com/max/875/1*dBy8ia2ZuKT36VUAHI8hQQ.png">
+
+ ```bash
+NOTE: Default credential admin/admin.
+```
 
 
+<hr>
+
+<h3>4 - install nexus </h3>
+
+<p> Link Download: https://help.sonatype.com/repomanager2/download/ </p>
+<br />
+<img src="https://imgur.com/gYKNd5y.png" data-canonical-src="https://imgur.com/gYKNd5y.png">
+<br />  
+<p> service will run in port 8081 localhost : http://localhost:8080 </p>
+<h3> don't forget to add the mirror </h3>
+<img src="https://imgur.com/jX9BeJ6.png" data-canonical-src="https://imgur.com/jX9BeJ6.png">
+<br />  
+
+<img src="https://miro.medium.com/max/875/1*pOC_9b0f-yoENGDvxwcJfw.png" data-canonical-src="https://miro.medium.com/max/875/1*pOC_9b0f-yoENGDvxwcJfw.png">
+
+
+<hr> 
+
+<h1> Problems And How to fix 
