@@ -3,12 +3,8 @@ package tn.esprit.spring.controller;
 import java.util.Date;
 import java.util.List;
 
-import javax.faces.application.FacesMessage;
-import javax.faces.context.FacesContext;
 import javax.validation.constraints.Pattern;
 
-import org.ocpsoft.rewrite.annotation.Join;
-import org.ocpsoft.rewrite.el.ELBeanName;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
@@ -24,8 +20,7 @@ import tn.esprit.spring.services.IEmployeService;
 
 @Scope(value = "session")
 @Controller(value = "employeController")
-@ELBeanName(value = "employeController")
-@Join(path = "/", to = "/login.jsf")
+
 public class ControllerEmployeImpl  {
 
 	@Autowired
@@ -48,7 +43,7 @@ public class ControllerEmployeImpl  {
 	private Integer employeIdToBeUpdated; // getter et setter
 
 
-	public String doLogin() {
+	/*public String doLogin() {
 
 		String navigateTo = "null";
 		authenticatedUser=employeService.authenticate(login, password);
@@ -72,7 +67,7 @@ public class ControllerEmployeImpl  {
 		FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
 	
 	return "/login.xhtml?faces-redirect=true";
-	}
+	}*/
 
 
 	public String addEmploye() {
